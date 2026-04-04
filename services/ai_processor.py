@@ -1,22 +1,37 @@
 # ============================================================
 #   services/ai_processor.py
-#   Single API call per email — returns category, summary
+#   Local ollama call per email — returns category, summary
 #   and draft reply all at once
-#   This reduces API calls from 3 per email to 1 per email
-#   60 calls → 20 calls for all 20 emails
+#   This keeps the app offline and avoids external API usage
 # ============================================================
 
-from google import genai
 import json
-import sys, os
+import os
+import re
+import subprocess
+import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import GEMINI_API_KEY, MODEL, CATEGORY_COLORS
+from config import OLLAMA_ARGS, OLLAMA_BINARY, OLLAMA_MODEL, CATEGORY_COLORS
 
-client = genai.Client(api_key=GEMINI_API_KEY)
+
+def _run_local_model(prompt: str) -> str:
+    try:
+        completed = subprocess.run(
+            [OLLAMA_BINARY, "run", *OLLAMA_ARGS, OLLAMA_MODEL, prompt],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    except subprocess.CalledProcessError as exc:
+        stderr = exc.stderr.strip() if exc.stderr else ""
+        raise RuntimeError(f"ollama failed: {stderr or exc}") from exc
+
+    return completed.stdout.strip()
+
 
 def process_email(sender: str, subject: str, body: str) -> dict:
     """
-    Single API call that returns category, summary and draft reply.
+    Local ollama model call that returns category, summary and draft reply.
     Returns a dict with keys: category, summary, draft_reply
     """
 
@@ -34,17 +49,21 @@ Body: {body}
 
 Respond with only the JSON object:"""
 
-    response = client.models.generate_content(model=MODEL, contents=prompt)
-    raw = response.text.strip()
+    raw = _run_local_model(prompt)
 
-    # Clean up markdown code blocks if model wraps in them
+    # Remove any markdown or terminal control sequences, then normalize whitespace.
     if raw.startswith("```"):
         raw = raw.split("```")[1]
         if raw.startswith("json"):
             raw = raw[4:]
-    raw = raw.strip()
 
-    result = json.loads(raw)
+    raw = re.sub(r"\x1B[@-_][0-?]*[ -/]*[@-~]", "", raw)
+    raw = raw.replace("\r", " ").replace("\n", " ").strip()
+
+    try:
+        result = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"Invalid JSON from ollama: {exc}; raw output: {raw[:500]}") from exc
 
     # Validate category
     if result.get("category") not in CATEGORY_COLORS:
