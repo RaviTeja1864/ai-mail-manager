@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "from": "director.engineering@fintech.in",
+    "subject": "URGENT: Database migration failed \u2014 rollback needed now",
+    "body": "Hey, the database migration we ran at 2 AM last night failed halfway through. The users table is in an inconsistent state and about 8,000 users cannot log in right now. Customer support has received over 200 tickets in the last 2 hours. I have already escalated to the VP. The rollback script is at /scripts/rollback_v2.3.sql on the production server. You have the database admin credentials. Please run the rollback immediately and then send a status update to the entire engineering team. This is P0. Drop everything else.",
+    "time": "7:45 AM",
+    "category": "unknown",
+    "summary": "Could not process: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\nPlease retry in 59.640755526s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '59s'}]}}",
+    "draft_reply": "",
+    "status": "read"
+  },
+  {
+    "id": 2,
+    "from": "noreply@airtel-bill-alert.xyz",
+    "subject": "Airtel: Your number will be deactivated in 24 hours",
+    "body": "Dear Airtel Customer, Your mobile number has been flagged for suspicious activity and will be deactivated within 24 hours due to non-compliance with TRAI regulations. To prevent deactivation you must immediately re-verify your Aadhaar by clicking: http://airtel-trai-verify.xyz. Enter your 12-digit Aadhaar number, date of birth, registered email, and the OTP sent to your phone. Failure to verify will result in permanent SIM block and you will lose your number. Airtel KYC Verification Team.",
+    "time": "7:00 AM",
+    "category": "unknown",
+    "summary": "Could not process: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 57.335583352s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}",
+    "draft_reply": "",
+    "status": "unread"
+  },
+  {
+    "id": 3,
+    "from": "varun.bestfriend@gmail.com",
+    "subject": "Dude I got into IIM Ahmedabad \u2014 I cannot believe it",
+    "body": "Bro I am still shaking. I just got the email an hour ago. IIM Ahmedabad has offered me admission to the PGP 2026-28 batch. This is literally a dream I have had since class 10. I know I have been saying I would get in for years and you always believed me even when I did not believe myself. You were there when I failed the CAT the first time, and the second time, and when I finally cracked it this year. I just wanted you to be the first person I told before I even call my parents. We need to celebrate this weekend. Dinner is on me, anywhere you want, no budget limit. Seriously bro thank you for everything.",
+    "time": "6:30 AM",
+    "category": "unknown",
+    "summary": "Could not process: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 51.946780133s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '51s'}]}}",
+    "draft_reply": "",
+    "status": "unread"
+  },
+  {
+    "id": 4,
+    "from": "procurement@largeenterprise.co.in",
+    "subject": "RFP response required by March 28 \u2014 Rs.45 lakh contract",
+    "body": "Dear Vendor, We are pleased to inform you that your company has been shortlisted for the Enterprise Software Development RFP issued by our procurement department. The project scope involves building a custom inventory management system for our 12 warehouses across India. Estimated project value: Rs.45,00,000. To proceed we require your detailed technical proposal, team profiles, past project references, and commercial bid submitted by March 28, 2026 at 5 PM. Proposals must be submitted via our vendor portal at procurement.largeenterprise.co.in. Late submissions will not be considered under any circumstances.",
+    "time": "Yesterday, 4:00 PM",
+    "category": "unknown",
+    "summary": "Could not process: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\nPlease retry in 46.843109937s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '46s'}]}}",
+    "draft_reply": "",
+    "status": "unread"
+  },
+  {
+    "id": 5,
+    "from": "newsletter@densediscovery.com",
+    "subject": "Dense Discovery: On the economics of attention and deep work",
+    "body": "Issue 247. This week I have been thinking about the attention economy and its real cost on knowledge workers. Three things caught my attention. First, a study from UC Irvine found it takes an average of 23 minutes to fully regain focus after an interruption \u2014 and the average knowledge worker is interrupted every 11 minutes. Second, Cal Newport estimates that a single 4-hour block of deep work produces more meaningful output than a full day of fragmented shallow work. Third, the most productive people I know do not manage their time \u2014 they manage their attention. Essay recommendation this week: Paul Graham's Maker Schedule Manager Schedule, still the best thing written on this topic. Links and further reading at densediscovery.com.",
+    "time": "Yesterday, 8:00 AM",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 6,
+    "from": "visa.officer@vfsvisas.com",
+    "subject": "Visa appointment confirmed \u2014 German Consulate, April 3",
+    "body": "Dear Applicant, Your visa appointment has been successfully scheduled. Appointment details: Consulate: German Consulate General, Mumbai. Date: Thursday April 3, 2026. Time: 10:30 AM. Appointment reference: DEVFS2026033847. Address: Hoechst House, Nariman Point, Mumbai 400021. Documents to carry: Filled Schengen visa application form, valid passport with minimum 6 months validity, 2 passport size photographs, travel insurance, bank statements for last 6 months, confirmed flight tickets and hotel bookings, employer NOC letter. Arrive 10 minutes before your appointment time. No mobile phones allowed inside the consulate.",
+    "time": "Yesterday, 2:15 PM",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 7,
+    "from": "appa.calling@gmail.com",
+    "subject": "About your old scooter \u2014 should we sell it",
+    "body": "Kanna, this is Appa. I am learning email from YouTube videos. Your old Activa is still in the parking here and nobody is using it. It has been sitting for 14 months now and the battery died. I got the battery replaced for Rs.1,200 last week because I thought you might come home but you did not come for Pongal or for your cousin's function. Your Amma says we should sell it and use the money for the house painting but I told her I will ask you first. The scooter mechanic near our house says he will give Rs.25,000 for it. What do you think? Also are you eating? Call us on Sunday.",
+    "time": "Yesterday, 8:00 PM",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 8,
+    "from": "security@github.com",
+    "subject": "New sign-in to your GitHub account from Chennai, India",
+    "body": "Hi, we noticed a new sign-in to your GitHub account. Sign-in details: Location: Chennai, Tamil Nadu, India. IP address: 49.204.xx.xx. Device: Chrome on Windows. Date and time: March 22, 2026 at 11:15 AM IST. If this was you, no action is needed. If you do not recognize this sign-in, please secure your account immediately by going to github.com/settings/security and changing your password and revoking any unrecognized sessions. You can also enable two-factor authentication if you have not already done so. The GitHub Team.",
+    "time": "Yesterday, 11:15 AM",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 9,
+    "from": "yash.junior.dev@company.in",
+    "subject": "Need guidance \u2014 should I quit and join a startup?",
+    "body": "Hi, I hope you do not mind me reaching out directly. I am Yash, joined the team 8 months ago as a junior developer. I have a situation and I trust your judgment more than anyone else here. I have received an offer from a 6-month-old startup building AI tools for legal firms. The role is full stack engineer, CTC is Rs.12 LPA versus my current Rs.7 LPA, and they are offering 0.3 percent ESOP. But it is a seed stage company with only 4 months of runway left and they are currently in talks for Series A. I am 23 years old, no major financial obligations. Is the risk worth it at this stage of my career? Would really value your honest perspective.",
+    "time": "2 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 10,
+    "from": "free-recharge@daily-spin-reward.co",
+    "subject": "You have won a free Jio recharge of Rs.999 \u2014 claim in 10 mins",
+    "body": "DEAR USER! Congratulations! Jio has selected your number for a FREE recharge of Rs.999 as part of their customer loyalty program. To activate your free recharge immediately: Step 1 \u2014 Click the link below. Step 2 \u2014 Enter your Jio mobile number and Jio account password. Step 3 \u2014 Pay a one-time activation fee of Rs.49 via UPI to jiofree9@paytm. Your Rs.999 recharge will be credited within 60 seconds after payment. This offer expires in 10 minutes. Over 14,000 users have already claimed today. Claim now: http://jio-free-recharge-activate.co/claim",
+    "time": "2 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 11,
+    "from": "noreply@naukri.com",
+    "subject": "Your profile was viewed by 8 recruiters this week",
+    "body": "Hi, here is your weekly Naukri profile activity summary. Profile views this week: 8 recruiters viewed your profile. Companies that viewed your profile include: Atlassian, Groww, and CRED. Job applications: 2 applications are under review, 1 application shortlisted for next round. Your profile completeness is at 84 percent. Add your current project details and certifications to reach 100 percent and get 3x more views. New jobs matching your profile: 47 new jobs in Bengaluru for Python Developer and ML Engineer roles in the last 7 days. Set up job alerts to never miss a matching opening.",
+    "time": "2 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 12,
+    "from": "priya.colleague@company.in",
+    "subject": "Quick favour \u2014 can you swap your Friday WFH with me?",
+    "body": "Hi, I know this is a small ask but it would mean a lot. My parents are visiting from Nagpur this Friday and they arrive at 10 AM at the airport. If I have to come to office Friday I will miss picking them up and they are not great with navigating the city alone. Could you swap your WFH day with me? You take Friday WFH and I will take your Monday WFH next week. I already checked with our manager and he said it is fine as long as both of us agree. Please let me know by tomorrow morning so I can update the team roster. I owe you one!",
+    "time": "3 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 13,
+    "from": "newsletter@aisupremacy.substack.com",
+    "subject": "AI Weekly: GPT-5 benchmarks leak, Gemini Ultra 2 launches, India AI mission update",
+    "body": "Big week in AI. 1) GPT-5 benchmark results leaked on Reddit before official announcement \u2014 scores 94 percent on MMLU and 71 percent on ARC-AGI. OpenAI has not confirmed. 2) Google officially launched Gemini Ultra 2 with 2 million token context window and native video understanding. Available in Gemini Advanced. 3) India AI Mission allocated Rs.2,000 crore to 18 new GPU clusters across IITs and NITs \u2014 compute access for researchers dramatically improved. 4) Anthropic released a paper on constitutional AI 2.0 showing 40 percent reduction in harmful outputs. 5) Meta open sourced Llama 4 with 405 billion parameters \u2014 runs on a single H100 node. Full breakdown with benchmark comparisons at aisupremacy.substack.com.",
+    "time": "3 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 14,
+    "from": "admin@gymkhana.fitness",
+    "subject": "Your gym membership expires on March 31 \u2014 renew now",
+    "body": "Dear Member, Your Gymkhana Fitness membership (Annual Premium Plan) is set to expire on March 31, 2026. We hope you have enjoyed access to our facilities including the gym floor, swimming pool, squash courts, and group fitness classes over the past year. Renewal options: Annual plan Rs.18,000 (save Rs.4,000 versus monthly), 6-month plan Rs.10,500, Monthly plan Rs.1,800. Early renewal discount of 10 percent applies if you renew before March 25. You can renew at the front desk or at gymkhana.fitness/renew. Your trainer Mahesh has noted your great progress this year and looks forward to continuing your program.",
+    "time": "3 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 15,
+    "from": "content@hashnode.com",
+    "subject": "Your blog post got 2,400 views this week \u2014 keep writing!",
+    "body": "Hi Author, great news! Your blog post titled 'Building a REST API with FastAPI and PostgreSQL \u2014 Complete Guide' published 3 weeks ago has crossed 2,400 views this week alone. It is currently trending in the Python and Backend Development tags on Hashnode. You have gained 47 new followers this week. Top traffic sources: Google search 68 percent, Twitter 18 percent, direct 14 percent. Your post has been bookmarked 312 times. Several readers left comments asking for a follow-up post on authentication and Docker deployment. This would be a great opportunity to grow your audience further. Keep up the great writing!",
+    "time": "4 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 16,
+    "from": "operations@deliveryhub.co",
+    "subject": "Contract renewal discussion \u2014 current terms expire April 30",
+    "body": "Dear Partner, This is a formal notice that our technology services agreement with your company is set to expire on April 30, 2026. We have been very satisfied with the quality of work delivered over the past 18 months, particularly the logistics dashboard and the driver tracking module. We would like to discuss renewal terms for the next 12 months. On our end we are looking to expand the scope to include a mobile app for delivery partners and integration with our new warehouse management system. Could we schedule a call during the week of March 24 to discuss scope, timeline, and revised commercial terms? Please propose a time that works for you.",
+    "time": "4 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 17,
+    "from": "manoj.uncle@gmail.com",
+    "subject": "Forwarding this job opportunity \u2014 please check for your cousin",
+    "body": "Beta, this is Manoj mama. Your father gave me your email. I am forwarding a WhatsApp message I got from my office colleague about a job opening at his company for a software person. The message says they need someone who knows computers and coding and the salary is good. I do not understand all the technical things in the job description so I am forwarding to you. Can you read it and tell me if it is suitable for your cousin Suresh? He has done BCA and knows some basic programming. He has been jobless for 8 months and the family is very worried. If it is genuine please guide him on how to apply. Thank you.",
+    "time": "5 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 18,
+    "from": "noreply@swiggy.com",
+    "subject": "Order cancelled \u2014 restaurant closed unexpectedly",
+    "body": "We are sorry! Your Swiggy order has been cancelled because the restaurant closed unexpectedly before your order could be prepared. Order details: Restaurant: Burma Burma, Indiranagar. Items: Khow Suey for 2, Burmese Tea Leaf Salad, Mohinga Soup. Order value: Rs.1,240. Your full refund of Rs.1,240 has been initiated and will be credited to your original payment method within 5 to 7 business days. As an apology we have added a Rs.100 Swiggy coupon to your account valid for 7 days. We apologize for the inconvenience caused. You can reorder from nearby restaurants.",
+    "time": "5 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 19,
+    "from": "hod.cse@college.edu.in",
+    "subject": "Department project showcase \u2014 nominate your best project by March 26",
+    "body": "Dear Final Year Students, The annual CSE Department Project Showcase will be held on April 8, 2026. This event is attended by 25 industry partners including Google, Infosys, Freshworks, and several funded startups who actively recruit from the showcase. Each team must submit a 200-word project abstract and a 2-minute demo video through the college portal by March 26, 2026. Top 10 projects selected by faculty will present live to industry judges. Winning teams will receive cash prizes of Rs.15,000 for first place, Rs.10,000 for second, and Rs.5,000 for third. Industry partners have also confirmed they will fast-track interviews for standout projects. Do not miss this opportunity.",
+    "time": "5 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  },
+  {
+    "id": 20,
+    "from": "ritika.school.friend@gmail.com",
+    "subject": "Remember me? Reconnecting after 8 years!",
+    "body": "Hey! I am not sure if you remember me \u2014 Ritika from DPS Bangalore, we were in the same section from class 6 to class 10 and sat next to each other in science for 2 years. I found you on LinkedIn and then got your email from the school alumni group. I am currently working at Bangalore itself, in finance sector. I saw you are in tech and doing really well. It has genuinely been 8 years since school ended and I realised I lost touch with almost everyone from those days. A bunch of us from DPS are doing a casual meetup sometime in April if you are interested \u2014 nothing fancy, just coffee and catching up with old faces. Would you be up for it?",
+    "time": "6 days ago",
+    "category": null,
+    "summary": null,
+    "draft_reply": null,
+    "status": "unread"
+  }
+]

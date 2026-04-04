@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ email.subject }} — AI Email Manager</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      color: #2d2d2d;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #1a1a2e;
+      color: white;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .back-btn {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: rgba(255,255,255,0.2); }
+    .header-title { font-size: 16px; font-weight: 500; color: #ccc; }
+
+    /* ── Flash Messages ── */
+    .flash-container { padding: 10px 40px 0; }
+    .flash {
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .flash.success { background: #e6f9f0; color: #1a7a4a; border: 1px solid #b2e8cf; }
+    .flash.error   { background: #fdecea; color: #b71c1c; border: 1px solid #f5c6c6; }
+    .flash.info    { background: #e8f0fe; color: #1a56b0; border: 1px solid #b3cdf7; }
+
+    /* ── Main Layout ── */
+    .container {
+      max-width: 860px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* ── Email Card ── */
+    .email-card {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .email-header {
+      padding: 24px 28px 20px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .email-subject {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 12px;
+    }
+    .email-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .meta-item { font-size: 13px; color: #888; }
+    .meta-item strong { color: #444; }
+
+    /* ── Category Badges ── */
+    .badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .badge-red    { background: #fdecea; color: #b71c1c; }
+    .badge-orange { background: #fff3e0; color: #e65100; }
+    .badge-blue   { background: #e3f2fd; color: #1565c0; }
+    .badge-green  { background: #e8f5e9; color: #2e7d32; }
+    .badge-purple { background: #f3e5f5; color: #6a1b9a; }
+    .badge-gray   { background: #f5f5f5; color: #616161; }
+
+    /* ── Email Body ── */
+    .email-body {
+      padding: 24px 28px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #333;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* ── AI Summary Section ── */
+    .ai-section {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .ai-section-header {
+      background: #f8f9ff;
+      padding: 14px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #7c6af7;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border-bottom: 1px solid #eceeff;
+    }
+    .ai-section-body {
+      padding: 20px 24px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #444;
+    }
+
+    /* ── Draft Reply Section ── */
+    .draft-section {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .draft-header {
+      background: #f0faf4;
+      padding: 14px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #2e7d32;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border-bottom: 1px solid #d6edd8;
+    }
+    .draft-body {
+      padding: 20px 24px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: #333;
+      white-space: pre-wrap;
+    }
+    .draft-actions {
+      padding: 16px 24px;
+      background: #fafafa;
+      border-top: 1px solid #f0f0f0;
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-approve {
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-approve:hover { background: #1b5e20; }
+
+    .btn-reject {
+      background: white;
+      color: #c62828;
+      border: 2px solid #ef9a9a;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-reject:hover { background: #fdecea; }
+
+    /* ── Spam warning ── */
+    .spam-warning {
+      background: #fdecea;
+      border: 1px solid #f5c6c6;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: #b71c1c;
+      margin-bottom: 20px;
+    }
+
+    /* ── Not processed yet ── */
+    .not-processed {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #f57f17;
+      margin-bottom: 20px;
+    }
+    .not-processed a {
+      color: #7c6af7;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <a class="back-btn" href="/">← Back to Inbox</a>
+  <span class="header-title">Email Detail</span>
+</div>
+
+<!-- Flash Messages -->
+<div class="flash-container">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div class="flash {{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endwith %}
+</div>
+
+<div class="container">
+
+  <!-- Email Card -->
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-subject">{{ email.subject }}</div>
+      <div class="email-meta-row">
+        <span class="meta-item"><strong>From:</strong> {{ email.from }}</span>
+        <span class="meta-item">{{ email.time }}</span>
+        {% if email.category %}
+          {% set color = category_colors.get(email.category, 'gray') %}
+          <span class="badge badge-{{ color }}">{{ email.category }}</span>
+        {% endif %}
+      </div>
+    </div>
+    <div class="email-body">{{ email.body }}</div>
+  </div>
+
+  <!-- Spam Warning -->
+  {% if email.category == "spam" %}
+    <div class="spam-warning">
+      This email has been classified as <strong>Spam</strong> by AI. No reply has been drafted. You can safely ignore this email.
+    </div>
+
+  <!-- Not Processed Yet -->
+  {% elif email.category is none %}
+    <div class="not-processed">
+      This email has not been processed by AI yet.
+      <a href="/">Go back and click "Run AI on Inbox"</a> to process all emails.
+    </div>
+
+  {% else %}
+
+    <!-- AI Summary -->
+    {% if email.summary %}
+    <div class="ai-section">
+      <div class="ai-section-header">AI Summary</div>
+      <div class="ai-section-body">{{ email.summary }}</div>
+    </div>
+    {% endif %}
+
+    <!-- Draft Reply -->
+    {% if email.draft_reply %}
+    <div class="draft-section">
+      <div class="draft-header">AI Draft Reply</div>
+      <div class="draft-body">{{ email.draft_reply }}</div>
+      <div class="draft-actions">
+        <form action="/approve/{{ email.id }}" method="POST" style="display:inline;">
+          <button class="btn-approve" type="submit">Approve &amp; Save</button>
+        </form>
+        <form action="/reject/{{ email.id }}" method="POST" style="display:inline;">
+          <button class="btn-reject" type="submit">Reject</button>
+        </form>
+      </div>
+    </div>
+    {% else %}
+      <div class="not-processed">
+        No draft reply available for this email.
+      </div>
+    {% endif %}
+
+  {% endif %}
+
+</div>
+</body>
+</html>
