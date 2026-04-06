@@ -1,0 +1,23 @@
+[
+  {
+    "email_id": 1,
+    "to": "director.engineering@fintech.in",
+    "subject": "Re: URGENT: Database migration failed \u2014 rollback needed now",
+    "reply_body": "Hi,\n\nI've received your urgent request and understand the severity of the situation. I am proceeding with the rollback script immediately. I will provide a status update to the engineering team as soon as the rollback is complete.\n\nBest regards,\nYour Name",
+    "status": "approved"
+  },
+  {
+    "email_id": 1,
+    "to": "director.engineering@fintech.in",
+    "subject": "Re: URGENT: Database migration failed \u2014 rollback needed now",
+    "reply_body": "I have received your urgent request reg regarding the database migration failure. I am immediately running the roll rollback script as instructed. I will send a status update to the entire en engineering team as soon as the process is complete.",
+    "status": "approved"
+  },
+  {
+    "email_id": 8,
+    "to": "security@github.com",
+    "subject": "Re: New sign-in to your GitHub account from Chennai, India",
+    "reply_body": "Hi security@github.com,\n\nThank you for reaching out reg regarding my recent login activity on your platform. I am aware that there  was a new sign-in to my GitHub account located in Chennai, Tamil Nadu. Plea Please let me know how I can assist with verifying or securing this account account if it's not mine.\n\nBest regards,\n[Your Name]",
+    "status": "approved"
+  }
+]
