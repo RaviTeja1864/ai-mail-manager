@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Email Manager</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -22,8 +27,17 @@
       align-items: center;
       justify-content: space-between;
     }
-    .header h1 { font-size: 22px; font-weight: 600; letter-spacing: 0.3px; }
-    .header h1 span { color: #7c6af7; }
+
+    .header h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .header h1 span {
+      color: #7c6af7;
+    }
+
     .process-btn {
       background: #7c6af7;
       color: white;
@@ -35,7 +49,10 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    .process-btn:hover { background: #6455d6; }
+
+    .process-btn:hover {
+      background: #6455d6;
+    }
 
     /* ── Stats Bar ── */
     .stats-bar {
@@ -45,6 +62,7 @@
       background: white;
       border-bottom: 1px solid #e8e8e8;
     }
+
     .stat-card {
       background: #f8f9ff;
       border: 1px solid #e4e6ff;
@@ -53,23 +71,54 @@
       text-align: center;
       min-width: 110px;
     }
-    .stat-card .num { font-size: 26px; font-weight: 700; color: #1a1a2e; }
-    .stat-card .label { font-size: 12px; color: #888; margin-top: 2px; }
+
+    .stat-card .num {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .stat-card .label {
+      font-size: 12px;
+      color: #888;
+      margin-top: 2px;
+    }
 
     /* ── Flash Messages ── */
-    .flash-container { padding: 10px 40px 0; }
+    .flash-container {
+      padding: 10px 40px 0;
+    }
+
     .flash {
       padding: 12px 18px;
       border-radius: 8px;
       font-size: 14px;
       margin-bottom: 8px;
     }
-    .flash.success { background: #e6f9f0; color: #1a7a4a; border: 1px solid #b2e8cf; }
-    .flash.error   { background: #fdecea; color: #b71c1c; border: 1px solid #f5c6c6; }
-    .flash.info    { background: #e8f0fe; color: #1a56b0; border: 1px solid #b3cdf7; }
+
+    .flash.success {
+      background: #e6f9f0;
+      color: #1a7a4a;
+      border: 1px solid #b2e8cf;
+    }
+
+    .flash.error {
+      background: #fdecea;
+      color: #b71c1c;
+      border: 1px solid #f5c6c6;
+    }
+
+    .flash.info {
+      background: #e8f0fe;
+      color: #1a56b0;
+      border: 1px solid #b3cdf7;
+    }
 
     /* ── Email List ── */
-    .container { padding: 20px 40px; }
+    .container {
+      padding: 20px 40px;
+    }
+
     .section-title {
       font-size: 13px;
       font-weight: 600;
@@ -93,23 +142,44 @@
       transition: box-shadow 0.15s, border-color 0.15s;
       cursor: pointer;
     }
+
     .email-card:hover {
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
       border-color: #c8c8f7;
     }
-    .email-card.unread { border-left: 4px solid #7c6af7; }
-    .email-card.read   { border-left: 4px solid #e0e0e0; }
+
+    .email-card.unread {
+      border-left: 4px solid #7c6af7;
+    }
+
+    .email-card.read {
+      border-left: 4px solid #e0e0e0;
+    }
 
     .dot {
-      width: 9px; height: 9px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background: #7c6af7;
       flex-shrink: 0;
     }
-    .dot.read { background: transparent; border: 1.5px solid #ccc; }
 
-    .email-info { flex: 1; min-width: 0; }
-    .email-from { font-weight: 600; font-size: 14px; color: #1a1a2e; }
+    .dot.read {
+      background: transparent;
+      border: 1.5px solid #ccc;
+    }
+
+    .email-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .email-from {
+      font-weight: 600;
+      font-size: 14px;
+      color: #1a1a2e;
+    }
+
     .email-subject {
       font-size: 14px;
       color: #444;
@@ -117,6 +187,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
     .email-summary {
       font-size: 12px;
       color: #888;
@@ -133,7 +204,11 @@
       gap: 6px;
       flex-shrink: 0;
     }
-    .time { font-size: 12px; color: #aaa; }
+
+    .time {
+      font-size: 12px;
+      color: #aaa;
+    }
 
     /* ── Category Badges ── */
     .badge {
@@ -144,13 +219,41 @@
       text-transform: uppercase;
       letter-spacing: 0.4px;
     }
-    .badge-red        { background: #fdecea; color: #b71c1c; }
-    .badge-orange     { background: #fff3e0; color: #e65100; }
-    .badge-blue       { background: #e3f2fd; color: #1565c0; }
-    .badge-green      { background: #e8f5e9; color: #2e7d32; }
-    .badge-purple     { background: #f3e5f5; color: #6a1b9a; }
-    .badge-gray       { background: #f5f5f5; color: #616161; }
-    .badge-processing { background: #fff8e1; color: #f57f17; }
+
+    .badge-red {
+      background: #fdecea;
+      color: #b71c1c;
+    }
+
+    .badge-orange {
+      background: #fff3e0;
+      color: #e65100;
+    }
+
+    .badge-blue {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+
+    .badge-green {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .badge-purple {
+      background: #f3e5f5;
+      color: #6a1b9a;
+    }
+
+    .badge-gray {
+      background: #f5f5f5;
+      color: #616161;
+    }
+
+    .badge-processing {
+      background: #fff8e1;
+      color: #f57f17;
+    }
 
     /* ── Empty state ── */
     .empty-state {
@@ -158,53 +261,58 @@
       padding: 60px 20px;
       color: #aaa;
     }
-    .empty-state p { font-size: 15px; margin-top: 8px; }
+
+    .empty-state p {
+      font-size: 15px;
+      margin-top: 8px;
+    }
   </style>
 </head>
+
 <body>
 
-<!-- Header -->
-<div class="header">
-  <h1>AI <span>Email</span> Manager</h1>
-  <form action="/process" method="POST" style="display:inline;">
-    <button class="process-btn" type="submit">Run AI on Inbox</button>
-  </form>
-</div>
+  <!-- Header -->
+  <div class="header">
+    <h1>Shalini <span>Email</span> Manager</h1>
+    <form action="/process" method="POST" style="display:inline;">
+      <button class="process-btn" type="submit">Run AI on Inbox</button>
+    </form>
+  </div>
 
-<!-- Stats -->
-<div class="stats-bar">
-  <div class="stat-card">
-    <div class="num">{{ stats.total }}</div>
-    <div class="label">Total</div>
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="num">{{ stats.total }}</div>
+      <div class="label">Total</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">{{ stats.unread }}</div>
+      <div class="label">Unread</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">{{ stats.processed }}</div>
+      <div class="label">AI Processed</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">{{ stats.spam }}</div>
+      <div class="label">Spam Found</div>
+    </div>
   </div>
-  <div class="stat-card">
-    <div class="num">{{ stats.unread }}</div>
-    <div class="label">Unread</div>
-  </div>
-  <div class="stat-card">
-    <div class="num">{{ stats.processed }}</div>
-    <div class="label">AI Processed</div>
-  </div>
-  <div class="stat-card">
-    <div class="num">{{ stats.spam }}</div>
-    <div class="label">Spam Found</div>
-  </div>
-</div>
 
-<!-- Flash Messages -->
-<div class="flash-container">
-  {% with messages = get_flashed_messages(with_categories=true) %}
+  <!-- Flash Messages -->
+  <div class="flash-container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
     {% for category, message in messages %}
-      <div class="flash {{ category }}">{{ message }}</div>
+    <div class="flash {{ category }}">{{ message }}</div>
     {% endfor %}
-  {% endwith %}
-</div>
+    {% endwith %}
+  </div>
 
-<!-- Email List -->
-<div class="container">
-  <div class="section-title">Inbox — {{ emails|length }} emails</div>
+  <!-- Email List -->
+  <div class="container">
+    <div class="section-title">Inbox — {{ emails|length }} emails</div>
 
-  {% if emails %}
+    {% if emails %}
     {% for email in emails %}
     <a class="email-card {{ email.status }}" href="/email/{{ email.id }}">
 
@@ -216,9 +324,9 @@
         <div class="email-from">{{ email.from }}</div>
         <div class="email-subject">{{ email.subject }}</div>
         {% if email.summary %}
-          <div class="email-summary">{{ email.summary }}</div>
+        <div class="email-summary">{{ email.summary }}</div>
         {% else %}
-          <div class="email-summary" style="color:#bbb;">Not yet processed by AI</div>
+        <div class="email-summary" style="color:#bbb;">Not yet processed by AI</div>
         {% endif %}
       </div>
 
@@ -226,21 +334,22 @@
       <div class="email-meta">
         <span class="time">{{ email.time }}</span>
         {% if email.category %}
-          {% set color = category_colors.get(email.category, 'gray') %}
-          <span class="badge badge-{{ color }}">{{ email.category }}</span>
+        {% set color = category_colors.get(email.category, 'gray') %}
+        <span class="badge badge-{{ color }}">{{ email.category }}</span>
         {% else %}
-          <span class="badge badge-processing">pending</span>
+        <span class="badge badge-processing">pending</span>
         {% endif %}
       </div>
 
     </a>
     {% endfor %}
-  {% else %}
+    {% else %}
     <div class="empty-state">
       <p>No emails found.</p>
     </div>
-  {% endif %}
-</div>
+    {% endif %}
+  </div>
 
 </body>
+
 </html>
