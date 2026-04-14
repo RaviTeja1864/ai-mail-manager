@@ -6,9 +6,9 @@
     "body": "Hey, the database migration we ran at 2 AM last night failed halfway through. The users table is in an inconsistent state and about 8,000 users cannot log in right now. Customer support has received over 200 tickets in the last 2 hours. I have already escalated to the VP. The rollback script is at /scripts/rollback_v2.3.sql on the production server. You have the database admin credentials. Please run the rollback immediately and then send a status update to the entire engineering team. This is P0. Drop everything else.",
     "time": "7:45 AM",
     "category": "urgent",
-    "summary": "Database migration failed, users cannot log in, immediate rol rollback required.",
-    "draft_reply": "",
-    "status": "read"
+    "summary": "Database migration failed; rollback needed urgently due to in inconsistent user table.",
+    "draft_reply": "Thank you for your prompt attention to this matter. I wil will immediately execute the rollback script from /scripts/rollback_v2.3.sq /scripts/rollback_v2.3.sql and send an update as soon as it is completed.",
+    "status": "unread"
   },
   {
     "id": 2,
@@ -16,10 +16,10 @@
     "subject": "Airtel: Your number will be deactivated in 24 hours",
     "body": "Dear Airtel Customer, Your mobile number has been flagged for suspicious activity and will be deactivated within 24 hours due to non-compliance with TRAI regulations. To prevent deactivation you must immediately re-verify your Aadhaar by clicking: http://airtel-trai-verify.xyz. Enter your 12-digit Aadhaar number, date of birth, registered email, and the OTP sent to your phone. Failure to verify will result in permanent SIM block and you will lose your number. Airtel KYC Verification Team.",
     "time": "7:00 AM",
-    "category": "spam",
-    "summary": "Suspicious message about deactivating mobile number due to su suspicious activity.",
-    "draft_reply": "",
-    "status": "read"
+    "category": "urgent",
+    "summary": "Airtel is deactivating customer's mobile number due to suspic suspicious activity.",
+    "draft_reply": "Dear Customer, I understand that this may come as a surpr surprise. Please be assured that we are taking all necessary steps to ensur ensure the security and compliance of our customers' accounts. If you have  any questions or concerns about this matter, please feel free to contact us us at support@airtel.com.",
+    "status": "unread"
   },
   {
     "id": 3,
@@ -28,9 +28,9 @@
     "body": "Bro I am still shaking. I just got the email an hour ago. IIM Ahmedabad has offered me admission to the PGP 2026-28 batch. This is literally a dream I have had since class 10. I know I have been saying I would get in for years and you always believed me even when I did not believe myself. You were there when I failed the CAT the first time, and the second time, and when I finally cracked it this year. I just wanted you to be the first person I told before I even call my parents. We need to celebrate this weekend. Dinner is on me, anywhere you want, no budget limit. Seriously bro thank you for everything.",
     "time": "6:30 AM",
     "category": "personal",
-    "summary": "Friend congratulates on successful admission to IIM Ahmedabad Ahmedabad.",
-    "draft_reply": "Hey Varun! Congratulations on your admission to IIM Ahmed Ahmedabad. That's amazing news! Let's plan a celebration this weekend, and  I'll make sure dinner is on me. Thanks for being my biggest cheerleader thr throughout it all!",
-    "status": "read"
+    "summary": "Personal congratulations from friend on admission to IIM Ahme Ahmedabad.",
+    "draft_reply": "Hi Varun,\n\nThat's great news! I'm so happy for you and  can't wait to celebrate with you. Feel free to let me know if there's anyth anything else I can do.\n\nBest regards,\n[Your Name]",
+    "status": "unread"
   },
   {
     "id": 4,
@@ -39,8 +39,8 @@
     "body": "Dear Vendor, We are pleased to inform you that your company has been shortlisted for the Enterprise Software Development RFP issued by our procurement department. The project scope involves building a custom inventory management system for our 12 warehouses across India. Estimated project value: Rs.45,00,000. To proceed we require your detailed technical proposal, team profiles, past project references, and commercial bid submitted by March 28, 2026 at 5 PM. Proposals must be submitted via our vendor portal at procurement.largeenterprise.co.in. Late submissions will not be considered under any circumstances.",
     "time": "Yesterday, 4:00 PM",
     "category": "work",
-    "summary": "Important RFP deadline for Rs.45 lakh contract required by Ma March 28.",
-    "draft_reply": "Dear [Vendor], thank you for your interest in our Enterpr Enterprise Software Development project. We look forward to reviewing your  detailed technical proposal, team profiles, past project references, and co commercial bid before the March 28 deadline at 5 PM. Please submit through  our vendor portal at procurement.largeenterprise.co.in. Looking forward to  your response.",
+    "summary": "Vendor needed to submit a detailed technical proposal by Marc March 28 for an inventory management system project.",
+    "draft_reply": "",
     "status": "unread"
   },
   {
@@ -50,8 +50,8 @@
     "body": "Issue 247. This week I have been thinking about the attention economy and its real cost on knowledge workers. Three things caught my attention. First, a study from UC Irvine found it takes an average of 23 minutes to fully regain focus after an interruption \u2014 and the average knowledge worker is interrupted every 11 minutes. Second, Cal Newport estimates that a single 4-hour block of deep work produces more meaningful output than a full day of fragmented shallow work. Third, the most productive people I know do not manage their time \u2014 they manage their attention. Essay recommendation this week: Paul Graham's Maker Schedule Manager Schedule, still the best thing written on this topic. Links and further reading at densediscovery.com.",
     "time": "Yesterday, 8:00 AM",
     "category": "newsletter",
-    "summary": "The email is a newsletter about attention economy and deep wo work, including recommendations for resources.",
-    "draft_reply": "Thank you for sharing this valuable information. I apprec appreciate your insights on managing focus and productivity.",
+    "summary": "This newsletter discusses the economics of attention and deep deep work, citing studies and tips for productivity.",
+    "draft_reply": "Thank you for sharing this insightful newsletter. I appre appreciate your efforts to help me improve my focus.",
     "status": "unread"
   },
   {
@@ -60,9 +60,9 @@
     "subject": "Visa appointment confirmed \u2014 German Consulate, April 3",
     "body": "Dear Applicant, Your visa appointment has been successfully scheduled. Appointment details: Consulate: German Consulate General, Mumbai. Date: Thursday April 3, 2026. Time: 10:30 AM. Appointment reference: DEVFS2026033847. Address: Hoechst House, Nariman Point, Mumbai 400021. Documents to carry: Filled Schengen visa application form, valid passport with minimum 6 months validity, 2 passport size photographs, travel insurance, bank statements for last 6 months, confirmed flight tickets and hotel bookings, employer NOC letter. Arrive 10 minutes before your appointment time. No mobile phones allowed inside the consulate.",
     "time": "Yesterday, 2:15 PM",
-    "category": "unknown",
-    "summary": "Could not process: Invalid JSON from ollama: Expecting ',' delimiter: line 1 column 242 (char 241); raw output: {   \"category\": \"work\",   \"summary\": \"German visa appointment confirmed for April 3rd.\",   \"draft_reply\": \"Thank you for confirming this important detail, Mr. Offic Officer! Your appointment details will be very helpful for my preparation.\" preparation.\" }",
-    "draft_reply": "",
+    "category": "work",
+    "summary": "Confirmed visa appointment with German Consulate on April 3 a at 10:30 AM, requiring necessary documents.",
+    "draft_reply": "Dear Visa Officer,\nThank you for confirming my visa appo appointment. I'm looking forward to meeting soon and bringing all the requi required documents.\nBest regards,\n[Your Name]",
     "status": "unread"
   },
   {
