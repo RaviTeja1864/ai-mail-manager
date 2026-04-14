@@ -21,7 +21,7 @@ BATCH_SIZE = 3
 
 def load_emails():
     with open(EMAILS_FILE, "r") as f:
-        return json.load(f
+        return json.load(f)
 
 def save_emails(emails):
     with open(EMAILS_FILE, "w") as f:
